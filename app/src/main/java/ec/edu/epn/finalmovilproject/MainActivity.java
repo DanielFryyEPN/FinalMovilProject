@@ -101,6 +101,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 managerS.beginTransaction()
                         .replace(R.id.mapLayout, seachFragment, seachFragment.getTag()).commit();
                 break;
+            case R.id.nav_rest:
+                TestRestFragment testRestFragment = new TestRestFragment();
+                FragmentManager managerR = getSupportFragmentManager();
+                managerR.beginTransaction()
+                        .replace(R.id.mapLayout, testRestFragment, testRestFragment.getTag()).commit();
+                break;
         }
 
         /*if (id == R.id.nav_camera) {

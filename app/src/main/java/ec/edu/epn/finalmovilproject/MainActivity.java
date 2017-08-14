@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 LoginFragment loginFragment = new LoginFragment();
                 FragmentManager manager = getSupportFragmentManager();
                 manager.beginTransaction()
-                    .replace(R.id.mapLayout, loginFragment, loginFragment.getTag()).commit();
+                    .replace(R.id.fragmentContainer, loginFragment, loginFragment.getTag()).commit();
                 return true;
             case R.id.action_registrarse:
                 return true;
@@ -93,19 +93,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 InfoFragment infoFragment = new InfoFragment();
                 FragmentManager managerI = getSupportFragmentManager();
                 managerI.beginTransaction()
-                        .replace(R.id.mapLayout, infoFragment, infoFragment.getTag()).commit();
+                        .replace(R.id.fragmentContainer, infoFragment, infoFragment.getTag()).commit();
                 break;
             case R.id.nav_search:
                 SeachFragment seachFragment = new SeachFragment();
                 FragmentManager managerS = getSupportFragmentManager();
                 managerS.beginTransaction()
-                        .replace(R.id.mapLayout, seachFragment, seachFragment.getTag()).commit();
+                        .replace(R.id.fragmentContainer, seachFragment, seachFragment.getTag()).commit();
                 break;
             case R.id.nav_rest:
                 TestRestFragment testRestFragment = new TestRestFragment();
                 FragmentManager managerR = getSupportFragmentManager();
                 managerR.beginTransaction()
-                        .replace(R.id.mapLayout, testRestFragment, testRestFragment.getTag()).commit();
+                        .replace(R.id.fragmentContainer, testRestFragment, testRestFragment.getTag()).commit();
                 break;
         }
 
